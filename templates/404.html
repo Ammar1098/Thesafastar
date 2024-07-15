@@ -1,0 +1,58 @@
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block head %}
+
+
+<title>404 Error - Page Not Found | Safa Star</title>
+<meta name="description" content="Oops! The page you are looking for could not be found. Safa Star regrets any inconvenience. Please navigate back to our homepage or use the navigation menu to find what you're looking for.">
+<meta name="keywords" content="404 error, page not found, Safa Star, website error, navigation, homepage">
+<meta name="author" content="Safa Star">
+<!-- Canonical Link -->
+<link rel="canonical" href="https://www.thesafastar.com/">
+
+<!-- Robots -->
+<meta name="robots" content="index,follow">
+
+{% endblock head %}
+
+{% block body %}
+{% include "base/navbar/navbar2.html" %}
+
+	<!-- Page Banner Area Start -->
+    <div class="page__banner">
+		<div class="page__banner-image" data-background="{% static "assets/img/banner/page-banner.jpg" %}"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="page__banner-content">
+						<h1>Not Found</h1>
+						<ul>
+							<li><a href="/">Home</a><span>|</span></li>
+							<li>404</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>    
+	<!-- Page Banner Area End -->
+    <!-- Error Page Start -->
+    <div class="error section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="error-page">
+                        <h1>4<span>0</span>4</h1>
+                        <h2>Oops! Page not found.</h2>
+                        <p>The page you are looking for is not available or doesn’t belong to this website!</p>						
+                        <a class="btn-one" href="/">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Error Page End -->
+
+
+{% endblock body %}

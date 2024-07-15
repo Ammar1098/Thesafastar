@@ -1,0 +1,146 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block head %}
+
+{% for product in product %}
+<title>{{product.name}} | Safa Star</title>
+{% endfor %}
+<meta name="description" content="Discover Safa Star's wide range of high-quality products for various industries, including lubricants, industry chemicals, safety products, building materials, and hardware. Find reliable solutions for your industrial needs with Safa Star's commitment to quality and customer satisfaction.">
+<meta name="keywords" content="Safa Star, industrial supplies, lubricants, industry chemicals, safety products, building materials, hardware, quality products, industrial solutions, customer satisfaction">
+
+
+
+<meta name="author" content="Safa Star">
+<!-- Canonical Link -->
+<link rel="canonical" href="https://www.thesafastar.com/">
+
+<!-- Robots -->
+<meta name="robots" content="index,follow">
+
+{% endblock head %}
+{% block body %}
+{% include "base/navbar/navbar2.html" %}
+
+
+    {% for product in product %}
+
+    <!-- Page Banner Area Start -->
+    <div class="page__banner">
+		<div class="page__banner-image" data-background="{% static "assets/img/banner/products-baneer.png" %}"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="page__banner-content">
+						<h1>{{product.name}}</h1>
+						<ul>
+							<li><a href="{% url "home" %}">Home</a><span>|</span></li>
+							<li style="color: white;">{{product.name}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>    
+	<!-- Page Banner Area End -->
+	<!-- Project Single Area Start -->
+	<div class="project__single section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="project__single-image mb-60 dark__image">
+						<img src="{{product.img.url}}" alt="{{product.name}}-safastar">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-8 lg-mb-30">
+					<div class="project__single-area">
+						<div class="project__single-area-content">
+							<h2>About {{product.name}}</h2>
+							<p>{{product.des|safe}}</p>
+						</div>
+                        <br>
+                        <div class="row">
+                            {% for x in productitems %}
+                            <div class="col-xl-4 col-lg-4 col-md-6 p-5">
+                                <div class="project__one-item">
+                                    <img class="img__full" src="{{x.img.url}}" alt="{{x.brand}}-safastar-brand">
+                                    <div class="project__one-item-content">
+                                        <span>{{x.product}}</span>
+                                        <h4><a href="{% url "brandsview" x.brand.slug %}">{{x.brand}}</a></h4>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                           
+                        </div>
+						
+                        
+					</div>					
+				</div>
+				<div class="col-lg-4">
+                    <div class="all__sidebar">
+                        
+                        <div class="all__sidebar-item">
+                            <h4>Get Instant Quotation On {{product.name}}</h4>
+                            <div class="all__sidebar-item-solution">
+                                <form method="post">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-12 mb-10">
+                                            <div class="contact__two-right-form-item contact-item">
+                                                <span class="fal fa-user"></span>
+                                                <input type="text" name="name" placeholder="Full Name" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-10">
+                                            <div class="contact__two-right-form-item contact-item">
+                                                <span class="far fa-envelope-open"></span>
+                                                <input type="email" name="email" placeholder="Email Address" required="required">											
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-10">
+                                            <div class="contact__two-right-form-item contact-item">
+                                                <span class="fal fa-phone"></span>
+                                                <input type="tel" name="Phone" placeholder="Phone Number with Country code">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 mb-10">
+                                            <div class="contact__two-right-form-item contact-item">
+                                                <span class="far fa-comments"></span>
+                                                <textarea name="message" placeholder="How can we help you?"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="contact__two-right-form-item">
+                                                <button class="btn-one" type="submit">Send </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+				
+                        <div class="all__sidebar-item-help" data-background="{{adss.img.url}}">
+							<img class="all__sidebar-item-help-shape" src="{% static "assets/img/shape/support.png" %}" alt="contact-safastar-image">
+                            <h4>Get connected to our Engineers !</h4>
+                            <div class="all__sidebar-item-help-contact">
+                                <i class="flaticon-phone-call"></i>
+                                <div class="all__sidebar-item-help-contact-content">
+                                    <span>Call Us</span>
+                                    <h6><a href="tel:+971 56 505 33 40">+971 56 505 33 40</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Project Single Area End -->
+
+
+    {% endfor %}
+
+    {% endblock body %}

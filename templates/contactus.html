@@ -1,0 +1,126 @@
+
+{% extends "base/base.html" %}
+{% load static %}
+
+{% block head %}
+
+<meta name="description" content="Get in touch with Safa Star for all your oilfield and industrial supply needs. Our expert team is ready to assist you with inquiries, orders, and any assistance you require. Contact us now for reliable service and quality products.">
+<meta name="keywords" content="Safa Star contact, oilfield supplies inquiry, industrial supplies assistance, contact information, customer support, oilfield products, industrial equipment, UAE, inquiries, orders">
+<meta name="author" content="Safa Star">
+<title>Contact Safa Star | Reach Out for Oilfield and Industrial Supplies</title>
+
+
+<!-- Canonical Link -->
+<link rel="canonical" href="https://www.thesafastar.com/">
+
+<!-- Robots -->
+<meta name="robots" content="index,follow">
+
+{% endblock head %}
+
+{% block body %}
+{% include "base/navbar/navbar2.html" %}
+
+
+
+
+	<!-- Page Banner Area Start -->
+    <div class="page__banner">
+		<div class="page__banner-image" data-background="{% static "assets/img/banner/contact us.png" %}"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12">
+					<div class="page__banner-content">
+						<h1>Contact US</h1>
+						<ul>
+							<li><a href="/">Home</a><span>|</span></li>
+							<li style="color: white;">Contact US</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>    
+	<!-- Page Banner Area End -->
+    <!-- Contact Page Start -->
+    <div class="contact__two section-padding pb-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 lg-mb-30">
+                    <div class="contact__two-info">
+                        <h2 class="mb-60 lg-mb-30">Get In Touch</h2>
+                        <div class="contact__two-info-item">
+                            <h6>Office Address<span>:</span></h6>
+                            <span>Mai Tower, Baghdad Street, Al Qusais, Al Nahda, Dubai - United Arab Emirates</span>
+                        </div>
+                        <div class="contact__two-info-item">
+                            <h6>Email Address <span>:</span></h6>
+                            <span>
+								<a href="mailto:Sales@thesafastar.com">Sales@thesafastar.com</a>
+							</span>
+                        </div>
+                        <div class="contact__two-info-item">
+                            <h6>Phone Number<span>:</span></h6>
+                            <span>
+								<a href="tel:+971 56 505 33 40">+971 56 505 33 40</a>
+							</span>
+                        </div>
+
+                        <!-- Contact Page Map Start -->
+                        <div class="contact__two-map" style="margin:0;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d225.46793343421083!2d55.3651986!3d25.2878392!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d76ed3a113b%3A0x8ad7f49c0769c171!2sMai%20Tower%20Al%20Nahada%201%20Dubai%20UAE!5e0!3m2!1sen!2sin!4v1707210353970!5m2!1sen!2sin" loading="lazy"></iframe>
+                        </div>    
+                        <!-- Contact Page Map End -->
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="contact__two-form">
+                        <h3 class="mb-30">Contact Us</h3>
+                        <form method="post">	
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-sm-12 mb-20"> 
+                                    <div class="contact__two-form-item contact-item">
+                                        <span class="fal fa-user"></span>
+                                        <input type="text" name="name" placeholder="Full Name" required="required">
+                                    </div>										
+                                </div>
+                                <div class="col-sm-12 mb-20">
+                                    <div class="contact__two-form-item contact-item">
+                                        <span class="far fa-envelope-open"></span>
+                                        <input type="email" name="email" placeholder="Email Address" required="required">											
+                                    </div>									
+                                </div>
+                                <div class="col-sm-12 mb-20">
+                                    <div class="contact__two-form-item contact-item">
+                                        <span class="far fa-phone"></span>
+                                        <input type="text" name="Phone" placeholder="Phone Number" required="required">											
+                                    </div>									
+                                </div>
+                                <div class="col-sm-12 mb-30"> 
+                                    <div class="contact__two-form-item contact-item">
+                                        <span class="far fa-comments"></span>
+                                        <textarea name="message" placeholder="How can we help you?"></textarea>
+                                    </div>										
+                                </div>
+                                <div class="col-lg-12">										
+                                    <div class="contact__two-form-item">
+                                        <button class="btn-one" type="submit">Submit Now</button>
+                                    </div>										
+                                </div>
+                            </div>							
+                        </form>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Page End -->
+    
+
+    <br>
+    <br>
+
+
+    
+{% endblock body %}
